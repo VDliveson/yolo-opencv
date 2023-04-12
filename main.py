@@ -91,12 +91,13 @@ def get_new_image(img,args):
         h = box[3]
         # draw_prediction(classes,image, class_ids[i], confidences[i], round(x), round(y), round(x+w), round(y+h))
         label = str(classes[class_id])
-
+        print(label)
         color = COLORS[class_id]
 
-        cv2.rectangle(img, (round(x),round(y)), (round(x+w),round(y+h)), color, 2)
+        img = cv2.rectangle(img, (round(x),round(y)), (round(x+w),round(y+h)), color, 2)
 
-        cv2.putText(img, label, (round(x)-10,round(y)-10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
+        img = cv2.putText(img, label, (round(x)-10,round(y)-10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
+    return img
 
 
 
@@ -104,13 +105,11 @@ vid = cv2.VideoCapture(0)
   
 while(True):
       
-    # Capture the video frame
-    # by frame
     ret, frame = vid.read()
   
     # Display the resulting frame
     img = get_new_image(frame,args)
-    cv2.imshow('frame', frame)
+    cv2.imshow('Output', img)
       
     # the 'q' button is set as the
     # quitting button you may use any
