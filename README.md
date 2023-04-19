@@ -27,16 +27,12 @@ When it comes to object detection, popular detection frameworks are
  
  `python main.py --config yolov3.cfg --weights yolov3.weights --classes yolov3.txt`
  
- 
+
  **Command format** 
  
  _$ python main.py --config /path/to/config/file --weights /path/to/weights/file --classes /path/to/classes/file_
  
  
- ### sample output :
- ![](object-detection.jpg)
+
+
  
-Checkout the object detection implementation available in [cvlib](http:cvlib.net) which enables detecting common objects in the context through a single function call `detect_common_objects()`.
- 
- 
- (_SSD and Faster R-CNN examples will be added soon_)
